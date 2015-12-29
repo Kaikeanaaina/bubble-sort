@@ -1,35 +1,47 @@
-var nums = [5,23,4,10,2,25,45,38];
+var nums = [50,4,63,772,5,94,8,7];
 
 function partitions(array){
-    var total = 0;
-    for(var s = 0 ; s < array.length ; s++){
-        total += array[s];
-    }
-    var pivot = total/array.length;
-    console.log(pivot);
+
+    var pivot = array[0];
     var left = [];
     var right = [];
 
-    for(var i = 0 ; i < array.length ; i++){
+    //==========================================================
 
-        if(pivot > array[i]){
-            left.push(array[i]);
+    if(array.length <=1){
 
-        }//if
+        return array;
 
-        else if(pivot<= array[i]){
-            right.push(array[i]);
-
-        } //else
     }
+    else{
+      for(var i = 1 ; i < array.length ; i++){
+          if(pivot > array[i]){
+              left.push(array[i]);
+          }//if
+          else if(pivot<= array[i]){
+              right.push(array[i]);
+          } //else
 
-    var together = left.concat(right);
-    console.log(left);
-    console.log(left.length);
-    console.log(right);
-    console.log(right.length);
 
-    return together;
+          console.log(left);
+        //console.log(left.length + " left length " + i);
+
+          console.log(right);
+        //   console.log(right.length+ " right length "+ i);
+          console.log('============');
+
+
+
+      }//for
+
+        return partitions(left).concat(pivot,partitions(right));
+
+
+
+    }//else
+
+
+
 }
 
 partitions(nums);
