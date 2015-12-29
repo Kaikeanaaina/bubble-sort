@@ -1,9 +1,11 @@
-module.exports = function bubbleSort (array){
+var bubbleModule = module.exports = (function (){
 var arrayNum = [5,1,4,2,8];
 var counter = null;
 var swaps = true;
 
-    if(swaps===false){
+  return{
+    bubbleSort: function(array){
+        if(swaps===false){
         return array;
     }
 
@@ -22,8 +24,10 @@ var swaps = true;
 
     }//else
     return bubbleSort(array);
+    }
+  };
 
-};
+});
 
 //Implement a function that will take an
 //input Array and apply the bubble sort

@@ -1,13 +1,14 @@
 var nums = [50,4,63,772,5,94,8,7];
 
-function partitions(array){
+var quickSortModule = module.exports = function(){
 
     var pivot = array[0];
     var left = [];
     var right = [];
 
     //==========================================================
-
+    return{
+      partitions : function(array){
     if(array.length <=1){
 
         return array;
@@ -23,25 +24,18 @@ function partitions(array){
           } //else
 
 
-          console.log(left);
-        //console.log(left.length + " left length " + i);
-
-          console.log(right);
-        //   console.log(right.length+ " right length "+ i);
-          console.log('============');
-
 
 
       }//for
 
-        return partitions(left).concat(pivot,partitions(right));
+        return this.partitions(left).concat(pivot,this.partitions(right));
 
 
 
     }//else
 
+  }
+ };
+};
 
-
-}
-
-partitions(nums);
+//partitions(nums);
