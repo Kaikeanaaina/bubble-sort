@@ -1,11 +1,13 @@
 var chai = require('chai');
 var expect = chai.expect;
 chai.should();
-var bubbleModule = require('./../bubbleSort.js');
+var bubbleModule = require('./../js/bubbleSort.js');
 
-var quickSortModule = require('./../quickSorting.js');
+var quickSortModule = require('./../js/quickSorting.js');
 
-var selectionModule = require('./../selectionSort.js');
+var selectionModule = require('./../js/selectionSort.js');
+
+var mergeModule = require('./../js/mergesorting.js');
 
 describe('bubbleModule',function(){
   it('should be a function', function(){
@@ -26,3 +28,8 @@ describe('quickSortModule',function(){
   });
 });
 
+describe('merge module',function(){
+  it('should be a function',function(){
+    expect(mergeModule).to.be.a('function');
+  });
+});

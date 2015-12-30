@@ -6,9 +6,7 @@
   "directories": {
     "test": "test"
   },
-  "scripts": {
-    "test": mocha;
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kaikeanaaina/bubble-sort.git"
@@ -22,6 +20,9 @@
   "homepage": "https://github.com/Kaikeanaaina/bubble-sort#readme",
   "devDependencies": {
     "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-sass": "^2.1.1",
     "mocha": "^2.3.4"
   }
 }
