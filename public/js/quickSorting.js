@@ -1,7 +1,7 @@
 var nums = [50,4,63,772,5,94,8,7];
 
 var quickSortModule = module.exports = function(){
-
+  var object = {};
     var pivot = array[0];
     var left = [];
     var right = [];
@@ -35,6 +35,7 @@ var quickSortModule = module.exports = function(){
     }//else
 
   }
+
  };
 };
 

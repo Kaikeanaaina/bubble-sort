@@ -1,189 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-//var bubbleModule = require('./bubbleSort.js');
-var mergeModule = require('./js/mergesorting.js');
-var bubbleModule = require('./js/bubbleSort.js');
-var quickModule = require('./js/quickSorting.js');
-}).call(this,require("g5I+bs"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_31e0dab9.js","/")
-},{"./js/bubbleSort.js":2,"./js/mergesorting.js":3,"./js/quickSorting.js":4,"buffer":6,"g5I+bs":8}],2:[function(require,module,exports){
-(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-var bubbleModule = module.exports = (function (){
-var arrayNum = [5,1,4,2,8];
-var counter = null;
-var swaps = true;
-
-  return{
-    bubbleSort: function(array){
-        if(swaps===false){
-        return array;
-    }
-
-    else{
-        swaps= false;
-        for(var i = 0;i<array.length;i++){
-
-
-            if(array[i]>array[i+1]){
-                var remove = array.splice( i, 1);
-
-                array.splice( i+1, 0, remove[0]);
-                swaps=true;
-            }
-        }//for
-
-    }//else
-    return bubbleSort(array);
-    }
-  };
-
-});
-
-//Implement a function that will take an
-//input Array and apply the bubble sort
-//algorithm to sort the input
-//and return the number of moves that were
-//necessary to sort the Array.
-
-//recursive
-
-
-//takes an array
-//compares the index 0 and the index 1
-// if index 0 is > index 1
-//switch them
-
-
-
-
-
-}).call(this,require("g5I+bs"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/js/bubbleSort.js","/js")
-},{"buffer":6,"g5I+bs":8}],3:[function(require,module,exports){
-(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-'use strict';
-
-var mergeModule = module.exports = function(){
-  var object = {};
-
-
-  object.mergeSorting= function(array){
-      var left = [];
-      var right = [];
-      var middle = Math.floor(array.length/2);
-
-      if(array.length===1){
-
-      // var newArray =[];
-      // var a = 0;
-      // var b = 0;
-      // console.log(left+ 'aaaaaaaa');
-      // console.log(right+ 'bbbbbbbbb');
-      // console.log(left.length+right.length);
-      // for(var j = 0 ; j < (left.length + right.length) ; j++ ){
-      //   if(left[a]<right[b]){
-      //     newArray.push(left);
-      //     a++;
-      //   } //if
-      //   else{
-      //     newArray.push(right);
-      //     b++;
-      //   } //else
-      // }//for
-
-      //return newArray + ' new array ';
-      return 'newArray';
-//"=========================================================="
-      //return array;
-
-
-      }//if
-
-      else{
-
-
-          for(var i = 0; i<array.length;i++){
-
-            if(i<middle){
-              left.push(array[i]);
-            }//if
-            else{
-              right.push(array[i]);
-
-              }//else
-          }//for
-          //*******the recursion happens here
-
-          console.log(left.length+right.length);
-          console.log(left);
-          console.log(right);
-          console.log('==========');
-          console.log(mergeModule().mergeSorting(left));
-          console.log('********');
-          console.log(mergeModule().mergeSorting(right));
-          console.log('^^^^^^^^^^^^^');
-          // mergeModule().mergeSorting(left);
-          // return right;
-          //return mergeModule().mergeSorting(right).concat(mergeModule().mergeSorting(left));
-
-      }//else
-      return array + ' aloha';
-
-
-  };//func
-  return object;
-};//var
-
-var nums = [3,2,1,4];
-//console.log(nums);
-
-console.log(mergeModule().mergeSorting(nums));
-
-}).call(this,require("g5I+bs"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/js/mergesorting.js","/js")
-},{"buffer":6,"g5I+bs":8}],4:[function(require,module,exports){
-(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-var nums = [50,4,63,772,5,94,8,7];
-
-var quickSortModule = module.exports = function(){
-
-    var pivot = array[0];
-    var left = [];
-    var right = [];
-
-    //==========================================================
-    return{
-      partitions : function(array){
-    if(array.length <=1){
-
-        return array;
-
-    }
-    else{
-      for(var i = 1 ; i < array.length ; i++){
-          if(pivot > array[i]){
-              left.push(array[i]);
-          }//if
-          else if(pivot<= array[i]){
-              right.push(array[i]);
-          } //else
-
-
-
-
-      }//for
-
-        return this.partitions(left).concat(pivot,this.partitions(right));
-
-
-
-    }//else
-
-  }
- };
-};
-
-//partitions(nums);
-}).call(this,require("g5I+bs"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/js/quickSorting.js","/js")
-},{"buffer":6,"g5I+bs":8}],5:[function(require,module,exports){
-(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 ;(function (exports) {
@@ -309,8 +125,8 @@ var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 	exports.fromByteArray = uint8ToBase64
 }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
 
-}).call(this,require("g5I+bs"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/base64-js/lib/b64.js","/node_modules/base64-js/lib")
-},{"buffer":6,"g5I+bs":8}],6:[function(require,module,exports){
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/base64-js/lib/b64.js","/../../node_modules/base64-js/lib")
+},{"buffer":2,"rH1JPG":4}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 /*!
  * The buffer module from node.js, for the browser.
@@ -1422,8 +1238,8 @@ function assert (test, message) {
   if (!test) throw new Error(message || 'Failed assertion')
 }
 
-}).call(this,require("g5I+bs"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/buffer/index.js","/node_modules/buffer")
-},{"base64-js":5,"buffer":6,"g5I+bs":8,"ieee754":7}],7:[function(require,module,exports){
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/buffer/index.js","/../../node_modules/buffer")
+},{"base64-js":1,"buffer":2,"ieee754":3,"rH1JPG":4}],3:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -1510,8 +1326,8 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-}).call(this,require("g5I+bs"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/ieee754/index.js","/node_modules/ieee754")
-},{"buffer":6,"g5I+bs":8}],8:[function(require,module,exports){
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/ieee754/index.js","/../../node_modules/ieee754")
+},{"buffer":2,"rH1JPG":4}],4:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 // shim for using process in browser
 
@@ -1577,5 +1393,200 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 
-}).call(this,require("g5I+bs"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/process/browser.js","/node_modules/process")
-},{"buffer":6,"g5I+bs":8}]},{},[1])
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/process/browser.js","/../../node_modules/process")
+},{"buffer":2,"rH1JPG":4}],5:[function(require,module,exports){
+(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
+var bubbleModule = module.exports = (function (){
+var arrayNum = [5,1,4,2,8];
+var counter = null;
+var swaps = true;
+
+  return{
+    bubbleSort: function(array){
+        if(swaps===false){
+        return array;
+    }
+
+    else{
+        swaps= false;
+        for(var i = 0;i<array.length;i++){
+
+
+            if(array[i]>array[i+1]){
+                var remove = array.splice( i, 1);
+
+                array.splice( i+1, 0, remove[0]);
+                swaps=true;
+            }
+        }//for
+
+    }//else
+    return bubbleSort(array);
+    }
+  };
+
+});
+
+//Implement a function that will take an
+//input Array and apply the bubble sort
+//algorithm to sort the input
+//and return the number of moves that were
+//necessary to sort the Array.
+
+//recursive
+
+
+//takes an array
+//compares the index 0 and the index 1
+// if index 0 is > index 1
+//switch them
+
+
+
+
+
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/bubbleSort.js","/")
+},{"buffer":2,"rH1JPG":4}],6:[function(require,module,exports){
+(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
+//var bubbleModule = require('./bubbleSort.js');
+var mergeModule = require('./mergesorting.js');
+var bubbleModule = require('./bubbleSort.js');
+var quickModule = require('./quickSorting.js');
+
+var header = document.createElement('h1');
+header.innerHTML = 'hi';
+document.body.appendChild(header);
+
+function lines(array){
+  for(var i = 0 ; i < array.length ; i++ ){
+
+  }
+}
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_b65c4157.js","/")
+},{"./bubbleSort.js":5,"./mergesorting.js":7,"./quickSorting.js":8,"buffer":2,"rH1JPG":4}],7:[function(require,module,exports){
+(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
+'use strict';
+
+var mergeModule = module.exports = function(){
+  var object = {};
+
+
+  object.mergeSorting= function(array){
+      var left = [];
+      var right = [];
+      var middle = Math.floor(array.length/2);
+
+      if(array.length===1){
+
+      // var newArray =[];
+      // var a = 0;
+      // var b = 0;
+      // console.log(left+ 'aaaaaaaa');
+      // console.log(right+ 'bbbbbbbbb');
+      // console.log(left.length+right.length);
+      // for(var j = 0 ; j < (left.length + right.length) ; j++ ){
+      //   if(left[a]<right[b]){
+      //     newArray.push(left);
+      //     a++;
+      //   } //if
+      //   else{
+      //     newArray.push(right);
+      //     b++;
+      //   } //else
+      // }//for
+
+      //return newArray + ' new array ';
+      return 'newArray';
+//"=========================================================="
+      //return array;
+
+
+      }//if
+
+      else{
+
+
+          for(var i = 0; i<array.length;i++){
+
+            if(i<middle){
+              left.push(array[i]);
+            }//if
+            else{
+              right.push(array[i]);
+
+              }//else
+          }//for
+          //*******the recursion happens here
+
+          console.log(left.length+right.length);
+          console.log(left);
+          console.log(right);
+          console.log('==========');
+          console.log(mergeModule().mergeSorting(left));
+          console.log('********');
+          console.log(mergeModule().mergeSorting(right));
+          console.log('^^^^^^^^^^^^^');
+          // mergeModule().mergeSorting(left);
+          // return right;
+          //return mergeModule().mergeSorting(right).concat(mergeModule().mergeSorting(left));
+
+      }//else
+      return array + ' aloha';
+
+
+  };//func
+  return object;
+};//var
+
+var nums = [3,2,1,4];
+//console.log(nums);
+
+console.log(mergeModule().mergeSorting(nums));
+
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/mergesorting.js","/")
+},{"buffer":2,"rH1JPG":4}],8:[function(require,module,exports){
+(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
+var nums = [50,4,63,772,5,94,8,7];
+
+var quickSortModule = module.exports = function(){
+  var object = {};
+    var pivot = array[0];
+    var left = [];
+    var right = [];
+
+    //==========================================================
+    return{
+      partitions : function(array){
+    if(array.length <=1){
+
+        return array;
+
+    }
+    else{
+      for(var i = 1 ; i < array.length ; i++){
+          if(pivot > array[i]){
+              left.push(array[i]);
+          }//if
+          else if(pivot<= array[i]){
+              right.push(array[i]);
+          } //else
+
+
+
+
+      }//for
+
+        return this.partitions(left).concat(pivot,this.partitions(right));
+
+
+
+    }//else
+
+  }
+
+ };
+};
+
+//partitions(nums);
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/quickSorting.js","/")
+},{"buffer":2,"rH1JPG":4}]},{},[6])
