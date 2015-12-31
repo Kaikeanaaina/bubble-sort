@@ -33,6 +33,14 @@ last, by now, all the groups should be sot by number, then we sewed them back to
 
 '''
 
+**best case**
+
+if the pivot's value is in the middle
+and the groups are borken evenly to both side of the pivot
+
+**worst case**
+if the pivot's value is leaning more a higher or lower part of the
+
 ---
 
 ### Bubble sort
@@ -46,7 +54,7 @@ We need make sure that every number in line is checked.
 
 '''
 
-          declase a swap to see the array is being swapped
+          declase a swap to true to see the array is being swapped
           set a base case
             if swap is false
               this will return the arrya
@@ -63,10 +71,13 @@ We need make sure that every number in line is checked.
               the array will return
 
 
-
-
-
 '''
+
+**best case**
+little amounts in the array
+
+**worst case**
+if there was a long array like a 100000 things in the array
 
 ---
 
@@ -102,6 +113,12 @@ eventually, all groups will come back together in a big group from smallest to b
 
 '''
 
+**best case**
+if there aren't a lot of things in the array
+
+**worst case**
+if there are a lot of things in the array
+
 ---
 
 ### Insertion sort
@@ -113,13 +130,60 @@ If the whole line of numbers goes through this, it will be in order
 
 **Psuedo Code**
 
-''' '''
+'''
+make base case
+  if there is no swapping
+    return the array
+
+  else
+    for loop through the area
+      if the previous index is smaller than the current index highlighted
+        swap it
+      else
+      continue to the next index
+
+  recursion
+
+
+'''
+
+**best case**
+everything is already in order
+
+
+**worst case**
+if we are sorting from smallest to biggest
+and the array is biggest to smallest
 
 ---
 
 ### Selection sort
 **explain**
+goes through the array, it works on a number and goes throught the entire array just to find any number smaller then it switches it with that number. then it goes to the next number in line, and compares that to the rest of the array to find anything smaller than itself and the smallest and then switches.
+this continues all the way to the end.
 
 **Psuedo Code**
 
-''' '''
+'''
+        make base case
+        if there is no swapping
+          return the array
+
+        else
+          for loop through the array
+            for loop the to compare the number selected to the rest of the numbers in the array
+            declare a variable the will hold the smallest number
+            if the number going through smaller than the small variable
+            set the number to the small variable
+            when it hits the end of the array
+            switch that with the number highlighted in the first for
+
+'''
+
+**best case**
+if the the best and worst case is the same
+no matter what the sort has to go through the whole array
+
+
+**worst case**
+same as best
