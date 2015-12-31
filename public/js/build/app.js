@@ -1396,36 +1396,73 @@ process.chdir = function (dir) {
 }).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/../../node_modules/process/browser.js","/../../node_modules/process")
 },{"buffer":2,"rH1JPG":4}],5:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-var bubbleModule = module.exports = (function (){
-var arrayNum = [5,1,4,2,8];
-var counter = null;
-var swaps = true;
+var num = [5,1,4,2,8];
+console.log(num);
 
-  return{
-    bubbleSort: function(array){
-        if(swaps===false){
-        return array;
-    }
+
+var bubbleModule = module.exports = (function (){
+
+var object = {};
+
+  object.bubbleSort = function(array){
+    var swaps = true;
+    if(swaps===false){ //this will be the base case
+      return array;
+    }//if
 
     else{
-        swaps= false;
-        for(var i = 0;i<array.length;i++){
+      //go through the array
+      for(var i = 0 ; i < array.length ; i++){
+        console.log(array[i]);
+        if(array[i]>array[i+1]){
+          var remove = array.splice( i,1); //the i is where the splice will start
+          //splice also holds the value of what was removed into an array
 
+          array.splice( i+1,0,remove[0]);// we put the zero in remove, because remove is an array
+          swaps=true;
 
-            if(array[i]>array[i+1]){
-                var remove = array.splice( i, 1);
+        }//if
 
-                array.splice( i+1, 0, remove[0]);
-                swaps=true;
-            }
-        }//for
+        else{
+          //bject.bubbleSort(array); //
+        }//else
 
+      }//for
     }//else
-    return bubbleSort(array);
-    }
-  };
 
-});
+  };//func
+
+return object;
+
+// object.bubbleSort =  function(array){
+// var counter = null;
+// var swaps = true;
+//   if(swaps===false){
+//     return array;
+//   }
+
+//   else{
+//   swaps= false;
+//     for(var i = 0;i<array.length;i++){
+
+
+//         if(array[i]>array[i+1]){
+//             var remove = array.splice( i, 1);
+
+//             array.splice( i+1, 0, remove[0]);
+//             swaps=true;
+//         }
+//     }//for
+
+//     }//else
+//     return bubbleSort(array);
+//     };//func
+
+//     return object;
+
+ });
+
+console.log(bubbleModule().bubbleSort(num));
 
 //Implement a function that will take an
 //input Array and apply the bubble sort
@@ -1462,86 +1499,86 @@ function lines(array){
 
   }
 }
-}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_b65c4157.js","/")
+}).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_48b17c78.js","/")
 },{"./bubbleSort.js":5,"./mergesorting.js":7,"./quickSorting.js":8,"buffer":2,"rH1JPG":4}],7:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-'use strict';
+// 'use strict';
 
-var mergeModule = module.exports = function(){
-  var object = {};
-
-
-  object.mergeSorting= function(array){
-      var left = [];
-      var right = [];
-      var middle = Math.floor(array.length/2);
-
-      if(array.length===1){
-
-      // var newArray =[];
-      // var a = 0;
-      // var b = 0;
-      // console.log(left+ 'aaaaaaaa');
-      // console.log(right+ 'bbbbbbbbb');
-      // console.log(left.length+right.length);
-      // for(var j = 0 ; j < (left.length + right.length) ; j++ ){
-      //   if(left[a]<right[b]){
-      //     newArray.push(left);
-      //     a++;
-      //   } //if
-      //   else{
-      //     newArray.push(right);
-      //     b++;
-      //   } //else
-      // }//for
-
-      //return newArray + ' new array ';
-      return 'newArray';
-//"=========================================================="
-      //return array;
+// var mergeModule = module.exports = function(){
+//   var object = {};
 
 
-      }//if
+//   object.mergeSorting= function(array){
+//       var left = [];
+//       var right = [];
+//       var middle = Math.floor(array.length/2);
 
-      else{
+//       if(array.length===1){
 
+//       // var newArray =[];
+//       // var a = 0;
+//       // var b = 0;
+//       // console.log(left+ 'aaaaaaaa');
+//       // console.log(right+ 'bbbbbbbbb');
+//       // console.log(left.length+right.length);
+//       // for(var j = 0 ; j < (left.length + right.length) ; j++ ){
+//       //   if(left[a]<right[b]){
+//       //     newArray.push(left);
+//       //     a++;
+//       //   } //if
+//       //   else{
+//       //     newArray.push(right);
+//       //     b++;
+//       //   } //else
+//       // }//for
 
-          for(var i = 0; i<array.length;i++){
-
-            if(i<middle){
-              left.push(array[i]);
-            }//if
-            else{
-              right.push(array[i]);
-
-              }//else
-          }//for
-          //*******the recursion happens here
-
-          console.log(left.length+right.length);
-          console.log(left);
-          console.log(right);
-          console.log('==========');
-          console.log(mergeModule().mergeSorting(left));
-          console.log('********');
-          console.log(mergeModule().mergeSorting(right));
-          console.log('^^^^^^^^^^^^^');
-          // mergeModule().mergeSorting(left);
-          // return right;
-          //return mergeModule().mergeSorting(right).concat(mergeModule().mergeSorting(left));
-
-      }//else
-      return array + ' aloha';
+//       //return newArray + ' new array ';
+//       return 'newArray';
+// //"=========================================================="
+//       //return array;
 
 
-  };//func
-  return object;
-};//var
+//       }//if
 
-var nums = [3,2,1,4];
-//console.log(nums);
+//       else{
 
-console.log(mergeModule().mergeSorting(nums));
+
+//           for(var i = 0; i<array.length;i++){
+
+//             if(i<middle){
+//               left.push(array[i]);
+//             }//if
+//             else{
+//               right.push(array[i]);
+
+//               }//else
+//           }//for
+//           //*******the recursion happens here
+
+//           console.log(left.length+right.length);
+//           console.log(left);
+//           console.log(right);
+//           console.log('==========');
+//           console.log(mergeModule().mergeSorting(left));
+//           console.log('********');
+//           console.log(mergeModule().mergeSorting(right));
+//           console.log('^^^^^^^^^^^^^');
+//           // mergeModule().mergeSorting(left);
+//           // return right;
+//           //return mergeModule().mergeSorting(right).concat(mergeModule().mergeSorting(left));
+
+//       }//else
+//       return array + ' aloha';
+
+
+//   };//func
+//   return object;
+// };//var
+
+// var nums = [3,2,1,4];
+// //console.log(nums);
+
+// console.log(mergeModule().mergeSorting(nums));
 
 }).call(this,require("rH1JPG"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/mergesorting.js","/")
 },{"buffer":2,"rH1JPG":4}],8:[function(require,module,exports){
