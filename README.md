@@ -11,6 +11,7 @@ last, by now, all the groups should be sot by number, then we sewed them back to
 **Psuedo Code**
 
 '''
+
       make the first number in the array the pivot point
       make two empty arrays, declared as 'left' and 'right'
 
