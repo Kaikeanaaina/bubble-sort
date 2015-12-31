@@ -11,22 +11,22 @@ last, by now, all the groups should be sot by number, then we sewed them back to
 **Psuedo Code**
 
 '''
-make the first number in the array the pivot point
-make two empty arrays, declared as 'left' and 'right'
+      make the first number in the array the pivot point
+      make two empty arrays, declared as 'left' and 'right'
 
-make a base case
-  if
-    once the array.length is equal to 1
+      make a base case
+        if
+          once the array.length is equal to 1
 
-  else
-    for loop through the array starting after the pivot point
+        else
+          for loop through the array starting after the pivot point
 
-      if the array[index] is smaller then the pivot
-        push the index in the left array, which holds all numbers smaller than the pivot
-      else
-        push the index in the right array, which holds all number bigger than the pivot
+            if the array[index] is smaller then the pivot
+              push the index in the left array, which holds all numbers smaller than the pivot
+            else
+              push the index in the right array, which holds all number bigger than the pivot
 
-      return an array by concatenating the left, pivot , and right
+            return an array by concatenating the left, pivot , and right
 
 
 
