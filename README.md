@@ -79,7 +79,28 @@ eventually, all groups will come back together in a big group from smallest to b
 
 **Psuedo Code**
 
-''' '''
+'''
+
+              make a base case
+              if
+                will unroll when the length of the array is 1
+
+              else
+                put if through a for loop
+                that will divide the array into two arrays
+                 recursion happens here to both of the array
+
+              it will then compare both first index of the arrays and push it into in a new array
+              for loop
+                declare an array that will be the sum of both array lengths, this is so that we can compare enough times for all index of arrays
+                declare two variables that each equal to 0
+                compare both of the arrays that were separated
+                push the smallest of both arrays into one array
+
+                return array
+
+
+'''
 
 ---
 
