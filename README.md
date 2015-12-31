@@ -45,7 +45,25 @@ We need make sure that every number in line is checked.
 **Psuedo Code**
 
 '''
-set a base case
+
+          declase a swap to see the array is being swapped
+          set a base case
+            if swap is false
+              this will return the arrya
+
+            else will go through the array to swap numbers
+              for loop to go through the array
+                another for loop to swap the numbers
+                if the number is bigger the next number swap it
+                else don't switch it,
+                move continue to the next index in the array and continue comparing
+
+              recursion happens here. it will get recursing until swaps can't happen
+              then it will unroll
+              the array will return
+
+
+
 
 
 '''
